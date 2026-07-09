@@ -1,9 +1,11 @@
 import "./Home.css";
+import herologo from "../assets/hero.svg"
 function Home() {
   return (
     <main>
 
       <section className="hero">
+        <div className="hero-left">
 
         <h1>Learn Without Limits</h1>
 
@@ -12,6 +14,11 @@ function Home() {
         </p>
 
         <button>Explore Courses</button>
+          
+        </div>
+        <div className="hero-right">
+          <img src={herologo} alt="hero-logo" className="hero-logo" />
+        </div>
 
       </section>
 
@@ -22,18 +29,21 @@ function Home() {
         <div className="course-container">
 
           <div className="course-card">
+            <div className="course-image">Course Image</div>
             <h3>Web Development</h3>
             <p>Learn HTML, CSS, JavaScript and React.</p>
             <button>View Course</button>
           </div>
 
           <div className="course-card">
+            <div className="course-image">Course Image</div>
             <h3>Data Structures & Algorithms</h3>
             <p>Master problem solving with C++.</p>
             <button>View Course</button>
           </div>
 
           <div className="course-card">
+            <div className="course-image">Course Image</div>
             <h3>Machine Learning</h3>
             <p>Start your AI journey from scratch.</p>
             <button>View Course</button>

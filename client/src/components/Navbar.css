@@ -3,32 +3,66 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 20px 60px;
+    padding: 15px 60px;
 
     background-color: white;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: #2563EB;
+    height: 90px;
+    width: auto;
+    cursor: pointer;
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
     list-style: none;
+    gap: 35px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
-    font-size: 18px;
+    color: #1e293b;
+    font-size: 17px;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #2563EB;
+    color: #2563eb;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-link {
+    text-decoration: none;
+    color: #1e293b;
+    font-size: 17px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.login-link:hover {
+    color: #2563eb;
+}
+
+.register-btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: #1d4ed8;
 }
