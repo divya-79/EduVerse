@@ -1,21 +1,9 @@
 import "./Home.css";
 import herologo from "../assets/hero.svg"
 import CourseCard from "../components/CourseCard";
+import courses from "../data/courses";
 function Home() {
-  const courses = [
-          {
-            title: "Web Development",
-            description: "Learn HTML, CSS, JavaScript and React."
-          },
-          {
-            title: "DSA",
-            description: "Master problem solving with C++."
-          },
-          {
-            title: "Machine Learning",
-            description: "Start your AI journey from scratch."
-          }
-        ];
+  
   return (
     <main>
 
@@ -42,16 +30,21 @@ function Home() {
         <h2>Featured Courses</h2>
 
         <div className="course-container">
-          
-        {courses.map((course, index) => (
-        <CourseCard
-          key={index}
-          title={course.title}
-          description={course.description}
-        />
-      ))}
 
-        </div>
+  {courses.map((course) => (
+    <CourseCard
+      key={course.id}
+      id={course.id}
+      title={course.title}
+      description={course.description}
+      instructor={course.instructor}
+      type={course.type}
+      price={course.price}
+      youtubeLink={course.youtubeLink}
+    />
+  ))}
+
+</div>
 
       </section>
 

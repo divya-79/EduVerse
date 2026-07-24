@@ -8,6 +8,8 @@ import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 
+import CourseDetails from "./pages/CourseDetails";
+
 function App() {
   return (
     <BrowserRouter>
@@ -19,7 +21,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />}/>
-        <Route path="*" element={<NotFound />} />
+        <Route path="/course/:id" element={<CourseDetails />} />
+        <Route path="*" element={<NotFound />} /> 
+        
         
       </Routes>
     </BrowserRouter>
