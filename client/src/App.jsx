@@ -12,6 +12,7 @@ import MyCourses from "./pages/MyCourses";
 import Profile from "./pages/Profile";
 import CourseDetails from "./pages/CourseDetails";
 import Courses from "./pages/Courses";
+import AddCourse from "./pages/AddCourse";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/my-courses" element={<MyCourses />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/add-course" element={<AddCourse />} />
         <Route path="*" element={<NotFound />} /> 
         
         

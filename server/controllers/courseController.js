@@ -103,3 +103,14 @@ export const deleteCourse = async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
+// @desc   Get courses created by logged-in user
+// @route  GET /api/courses/my-created
+export const getMyCreatedCourses = async (req, res) => {
+  try {
+    const courses = await Course.find({ createdBy: req.user._id }).sort({ createdAt: -1 });
+    res.status(200).json(courses);
+  } catch (error) {
+    console.error("Get My Courses Error:", error.message);
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};

@@ -42,6 +42,11 @@ function Navbar() {
               <Link to="/dashboard">Dashboard</Link>
             </li>
           )}
+          {isLoggedIn && (
+            <li>
+              <Link to="/add-course">Create Course</Link>
+            </li>
+          )}
         </ul>
       </div>
 

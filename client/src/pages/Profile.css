@@ -53,3 +53,36 @@
 .profile-card button:hover {
     background: #1d4ed8;
 }
+.my-created-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.my-created-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  transition: 0.2s ease;
+}
+
+.my-created-item:hover {
+  border-color: #4338ca;
+  transform: translateY(-2px);
+}
+
+.my-created-item h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: #0f172a;
+}
+
+.my-created-item p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}

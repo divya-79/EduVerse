@@ -5,15 +5,17 @@ import {
   getCourseById,
   updateCourse,
   deleteCourse,
+  getMyCreatedCourses,
 } from "../controllers/courseController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.get("/", getAllCourses);          // GET all courses (public)
-router.get("/:id", getCourseById);       // GET single course (public)
-router.post("/", protect, createCourse); // CREATE course (login required)
-router.put("/:id", protect, updateCourse);   // UPDATE course (login required)
-router.delete("/:id", protect, deleteCourse); // DELETE course (login required)
+router.get("/", getAllCourses);
+router.get("/my-created", protect, getMyCreatedCourses);
+router.get("/:id", getCourseById);
+router.post("/", protect, createCourse);
+router.put("/:id", protect, updateCourse);
+router.delete("/:id", protect, deleteCourse);
 
 export default router;

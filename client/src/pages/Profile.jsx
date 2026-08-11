@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Profile.css";
 import api from "../services/api";
+import { Link } from "react-router-dom";
 
 function Profile() {
   const [user, setUser] = useState(null);
@@ -13,6 +14,8 @@ function Profile() {
   });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
+  const [myCourses, setMyCourses] = useState([]);
+  const [loadingCourses, setLoadingCourses] = useState(true);
 
   useEffect(() => {
     const stored = localStorage.getItem("user");
@@ -26,6 +29,19 @@ function Profile() {
         semester: parsedUser.semester || "",
       });
     }
+
+    async function fetchMyCreatedCourses() {
+      try {
+        const response = await api.get("/courses/my-created");
+        setMyCourses(response.data);
+      } catch (err) {
+        console.error("Could not load created courses");
+      } finally {
+        setLoadingCourses(false);
+      }
+    }
+
+    fetchMyCreatedCourses();
   }, []);
 
   function handleChange(event) {
@@ -101,6 +117,25 @@ function Profile() {
             </div>
             <button onClick={() => setIsEditing(true)}>Edit Profile</button>
           </>
+        )}
+      </div>
+
+      <div className="profile-card">
+        <h2>My Created Courses</h2>
+
+        {loadingCourses ? (
+          <p>Loading...</p>
+        ) : myCourses.length === 0 ? (
+          <p>You haven't created any courses yet. <Link to="/add-course">Create one now</Link>.</p>
+        ) : (
+          <div className="my-created-list">
+            {myCourses.map((course) => (
+              <Link to={`/course/${course._id}`} key={course._id} className="my-created-item">
+                <h3>{course.title}</h3>
+                <p>{course.category} • {course.price === 0 ? "Free" : `₹${course.price}`}</p>
+              </Link>
+            ))}
+          </div>
         )}
       </div>
     </div>
