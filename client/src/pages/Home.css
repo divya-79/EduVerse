@@ -397,3 +397,105 @@ main {
   font-size: 13px;
   color: #64748b;
 }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 60px 24px;
+    text-align: center;
+  }
+
+  .hero-left {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .hero-left p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-left h1 {
+    font-size: 40px;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-right {
+    width: 100%;
+  }
+
+  .hero-logo {
+    max-width: 340px;
+  }
+
+  .featured-courses {
+    padding: 60px 20px;
+  }
+
+  .featured-courses h2 {
+    font-size: 28px;
+  }
+
+  .search-container input {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .course-card {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 18px;
+  }
+
+  .hero-left h1 {
+    font-size: 30px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-left p {
+    font-size: 16px;
+  }
+
+  .hero-stats {
+    gap: 24px;
+  }
+
+  .stat h3 {
+    font-size: 22px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .search-container input {
+    max-width: 100%;
+  }
+
+  .course-card {
+    padding: 20px;
+  }
+}
